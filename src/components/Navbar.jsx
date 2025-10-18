@@ -43,11 +43,11 @@ const Navbar = () => {
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                width: '65px',
-                height: '65px',
+                width: '140px',
+                height: '140px',
                 background: 'radial-gradient(circle, rgba(0, 200, 83, 0.3) 0%, rgba(0, 200, 83, 0) 70%)',
                 borderRadius: '50%',
-                filter: 'blur(6px)',
+                filter: 'blur(10px)',
                 opacity: isHovered ? 1 : 0.6,
                 transition: 'all 0.4s ease'
               }}
@@ -57,13 +57,13 @@ const Navbar = () => {
               alt="VEGO Logo"
               className="logo-image"
               style={{
-                width: '55px',
-                height: '55px',
+                width: '120px',
+                height: '120px',
                 objectFit: 'contain',
                 filter: isHovered 
-                  ? 'drop-shadow(0 6px 20px rgba(0, 200, 83, 0.6)) brightness(1.1)' 
-                  : 'drop-shadow(0 3px 12px rgba(0, 200, 83, 0.4))',
-                transform: isHovered ? 'scale(1.08) rotate(3deg)' : 'scale(1)',
+                  ? 'drop-shadow(0 8px 25px rgba(0, 200, 83, 0.7)) brightness(1.1)' 
+                  : 'drop-shadow(0 4px 15px rgba(0, 200, 83, 0.5))',
+                transform: isHovered ? 'scale(1.1) rotate(5deg)' : 'scale(1)',
                 transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
                 position: 'relative',
                 zIndex: 2
@@ -93,16 +93,16 @@ const Navbar = () => {
               border: 'none',
               color: 'white',
               borderRadius: '50px',
-              padding: '8px 20px',
+              padding: '10px 24px',
               fontWeight: '700',
               transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
               cursor: 'pointer',
-              fontSize: '14px',
+              fontSize: '15px',
               overflow: 'hidden',
               boxShadow: '0 4px 15px rgba(0, 200, 83, 0.3)',
               position: 'relative',
               zIndex: 1,
-              minWidth: '80px',
+              minWidth: '85px',
               textAlign: 'center'
             }}
             onMouseEnter={(e) => {
@@ -121,7 +121,7 @@ const Navbar = () => {
                 position: 'relative',
                 zIndex: 2,
                 textShadow: '0 1px 3px rgba(0,0,0,0.2)',
-                fontSize: '13px'
+                fontSize: '14px'
               }}
             >
               {language === 'ar' ? 'EN' : 'العربية'}
@@ -145,16 +145,16 @@ const Navbar = () => {
               to="/" 
               className="back-icon d-flex align-items-center justify-content-center"
               style={{
-                color: '#00c853', // Changed to green
-                width: '45px',
-                height: '45px',
+                color: '#00c853',
+                width: '50px',
+                height: '50px',
                 borderRadius: '50%',
                 transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
                 textDecoration: 'none',
-                border: '2px solid #00c853', // Green border
+                border: '2px solid #00c853',
                 background: '#ffffff',
                 fontWeight: 'bold',
-                fontSize: '20px',
+                fontSize: '22px',
                 boxShadow: '0 2px 10px rgba(0, 200, 83, 0.2)'
               }}
               onMouseEnter={(e) => {
@@ -174,8 +174,8 @@ const Navbar = () => {
             >
               {/* Custom Arrow SVG */}
               <svg 
-                width="20" 
-                height="20" 
+                width="22"
+                height="22"
                 viewBox="0 0 24 24" 
                 fill="currentColor"
                 style={{
@@ -207,29 +207,61 @@ const Navbar = () => {
       <style jsx>{`
         @media (max-width: 768px) {
           .navbar {
-            min-height: 60px !important;
+            min-height: 70px !important;
             padding: 0.4rem 0 !important;
           }
           
           .logo-image {
+            width: 90px !important;
+            height: 90px !important;
+          }
+          
+          .logo-glow {
+            width: 110px !important;
+            height: 110px !important;
+          }
+          
+          .language-switch {
+            padding: 8px 18px !important;
+            min-width: 75px !important;
+            font-size: 13px !important;
+          }
+          
+          .back-icon {
             width: 45px !important;
             height: 45px !important;
           }
           
+          .back-icon svg {
+            width: 20px !important;
+            height: 20px !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .navbar {
+            min-height: 65px !important;
+          }
+          
+          .logo-image {
+            width: 80px !important;
+            height: 80px !important;
+          }
+          
           .logo-glow {
-            width: 55px !important;
-            height: 55px !important;
+            width: 95px !important;
+            height: 95px !important;
           }
           
           .language-switch {
-            padding: 6px 16px !important;
+            padding: 7px 16px !important;
             min-width: 70px !important;
             font-size: 12px !important;
           }
           
           .back-icon {
-            width: 40px !important;
-            height: 40px !important;
+            width: 42px !important;
+            height: 42px !important;
           }
           
           .back-icon svg {
@@ -237,30 +269,16 @@ const Navbar = () => {
             height: 18px !important;
           }
         }
-        
-        @media (max-width: 480px) {
-          .navbar {
-            min-height: 55px !important;
-          }
-          
+
+        @media (max-width: 360px) {
           .logo-image {
-            width: 40px !important;
-            height: 40px !important;
+            width: 70px !important;
+            height: 70px !important;
           }
           
           .logo-glow {
-            width: 50px !important;
-            height: 50px !important;
-          }
-          
-          .back-icon {
-            width: 35px !important;
-            height: 35px !important;
-          }
-          
-          .back-icon svg {
-            width: 16px !important;
-            height: 16px !important;
+            width: 85px !important;
+            height: 85px !important;
           }
         }
       `}</style>
